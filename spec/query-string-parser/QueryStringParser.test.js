@@ -38,17 +38,17 @@ describe('QueryStringParser', function() {
     expect(typeof parser.getParam('foo')).toEqual('string');
   });
 
-  xit('should not include the hash when finding a key', function() {
+  it('should not include the hash when finding a key', function() {
     parser.setUrl('http://www.test.com?foo=bar&cat=dog#hashValue');
     expect(parser.getParam('cat')).toEqual('dog');
   });
 
-  xit('should be able to return the hash ', function() {
+  it('should be able to return the hash ', function() {
     parser.setUrl('http://www.test.com?foo=bar&cat=dog#hashValue');
     expect(parser.getHash()).toEqual('hashValue');
   });
 
-  xit('should return empty string if no hash is available', function() {
+  it('should return empty string if no hash is available', function() {
     parser.setUrl('http://www.test.com?foo=bar&cat=dog');
     expect(parser.getHash()).toEqual('');
   });
